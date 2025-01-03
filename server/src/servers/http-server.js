@@ -5,6 +5,7 @@ export function startHttpServer() {
     const app = express();
     app.use(express.json());
     app.use('/static', express.static('data'));
+    app.use('/public', express.static('public'));
     if (process.env.NODE_ENV === "production") {
         app.use(express.static("../dist"));
     }
