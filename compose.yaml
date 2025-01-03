@@ -1,0 +1,11 @@
+﻿services:
+  app:
+    build: .
+    container_name: node_app
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./server/data:/app/server/data
+    env_file:
+      - .env
+    restart: unless-stopped
